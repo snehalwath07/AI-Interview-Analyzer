@@ -1,4 +1,8 @@
+import { useNavigate } from "react-router-dom";
+
 const Login = () => {
+  const navigate = useNavigate();
+
   return (
     <div
       style={{
@@ -31,9 +35,7 @@ const Login = () => {
       />
 
       <button
-        onClick={() => {
-          window.location.href = "/dashboard";
-        }}
+        onClick={() => navigate("/dashboard")}
         style={{
           padding: "12px 25px",
           background: "#6d4aff",
