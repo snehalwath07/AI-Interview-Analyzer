@@ -1,6 +1,6 @@
 import useSpeechToText from "../hooks/useSpeechRecognition";
 import { useInterview } from "../context/InterviewContext";
-import { countFillers } from "../utils/fillerWords";
+import { countFillers } from "../utils/fillerwords";
 import { calculateWPM } from "../utils/speechRate";
 import { useEffect } from "react";
 
