@@ -1,4 +1,4 @@
-const fillerWords = [
+const fillerwords = [
   "um",
   "umm",
   "uh",
@@ -19,7 +19,7 @@ export const countFillers = (text) => {
 
   let count = 0;
 
-  fillerWords.forEach((word) => {
+  fillerwords.forEach((word) => {
     const regex = new RegExp(
       `\\b${word}\\b`,
       "gi"
