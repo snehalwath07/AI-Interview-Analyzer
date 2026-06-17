@@ -11,9 +11,11 @@ const useSpeechToText = () => {
   } = useSpeechRecognition();
 
   const startListening = () => {
-    SpeechRecognition.startListening({
-      continuous: true,
-    });
+  SpeechRecognition.startListening({
+  continuous: true,
+  interimResults: true,
+  language: "en-US",
+});
   };
 
   const stopListening = () => {

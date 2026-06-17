@@ -11,17 +11,27 @@ import QuestionGenerator from "./pages/QuestionGenerator";
 import Analytics from "./pages/Analytics";
 import Settings from "./pages/Settings";
 import PracticeZone from "./pages/PracticeZone";
+import Landing from "./pages/Landing";
+import Login from "./pages/Login";
 
 function App() {
   return (
     <BrowserRouter>
 
       <Routes>
-
+<Route
+  path="/login"
+  element={<Login />}
+/>
         <Route
-          path="/"
-          element={<Dashboard />}
-        />
+  path="/"
+  element={<Landing />}
+/>
+
+<Route
+  path="/dashboard"
+  element={<Dashboard />}
+/>
 
         <Route
           path="/questions"

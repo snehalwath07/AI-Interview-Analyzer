@@ -7,17 +7,9 @@ import CurrentQuestion from "../components/CurrentQuestion";
 import PerformancePanel from "../components/PerformancePanel";
 import MetricsGrid from "../components/MetricsGrid";
 
-import EmotionAnalysis from "../components/EmotionAnalysis";
-import EyeContactTimeline from "../components/EyeContactTimeline";
-import SpeechAnalysis from "../components/SpeechAnalysis";
-
 import TranscriptPanel from "../components/TranscriptPanel";
 import AnswerEvaluation from "../components/AnswerEvaluation";
 
-import AIFeedbackPanel from "../components/AIFeedbackPanel";
-import SkillsRadar from "../components/SkillsRadar";
-
-import RecruiterSummary from "../components/RecruiterSummary";
 import DownloadReport from "../components/DownloadReport";
 
 const Interview = () => {
@@ -30,33 +22,33 @@ const Interview = () => {
 
         <TopBar />
 
-        <WebcamPanel />
+        <div className="interview-top-row">
 
-        <CurrentQuestion />
+  <WebcamPanel />
+
+  <div className="question-section">
+
+    <CurrentQuestion />
+
+    <TranscriptPanel />
+
+  </div>
+
+</div>
 
         <PerformancePanel />
 
-                
+        <div className="metrics-evaluation-row">
 
-        <MetricsGrid />
-<div className="dashboard-row">
-  <EyeContactTimeline />
-  <SpeechAnalysis />
-</div>
+  <MetricsGrid />
 
-<div className="dashboard-row">
-  <TranscriptPanel />
   <AnswerEvaluation />
+
 </div>
 
-<div className="dashboard-row">
-  <AIFeedbackPanel />
-  <SkillsRadar />
-</div>
+        
 
-        <RecruiterSummary />
-
-<DownloadReport />
+        <DownloadReport />
 
       </div>
 

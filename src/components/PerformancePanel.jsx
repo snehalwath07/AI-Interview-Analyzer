@@ -14,11 +14,10 @@ const PerformancePanel = () => {
   );
 
   const overallScore = Math.round(
-    eyeContact * 0.30 +
-    speechRate * 0.20 +
-    fillerScore * 0.20 +
-    answerScore * 0.30
-  );
+  eyeContact * 0.45 +
+  speechRate * 0.25 +
+  fillerScore * 0.30
+);
 
   const scoreLabel =
     overallScore >= 85
@@ -52,10 +51,13 @@ const PerformancePanel = () => {
         <h3>Summary</h3>
 
         <p className="summary-text">
-          AI-generated performance summary
-          based on eye contact, speech rate,
-          filler words, and answer quality.
-        </p>
+
+  Eye contact was {eyeContact}%,
+  speech rate was {speechRate} WPM,
+  and {fillerCount} filler words
+  were detected during the session.
+
+</p>
 
         <div className="strengths-section">
 
@@ -64,26 +66,47 @@ const PerformancePanel = () => {
 
             <p>✅ Eye Contact: {eyeContact}%</p>
             <p>✅ Speech Rate: {speechRate} WPM</p>
-            <p>✅ Answer Score: {answerScore}%</p>
+          <p>✅ Filler Score: {fillerScore}%</p>
           </div>
 
           <div>
-            <h4>Areas to Improve</h4>
 
-            <p>
-              ⚠ Filler Words:
-              {" "}
-              {fillerCount}
-            </p>
+  <h4>Areas to Improve</h4>
 
-            <p>
-              ⚠ Maintain consistency
-            </p>
+  {fillerCount > 5 && (
+    <p>
+      ⚠ Reduce filler words
+    </p>
+  )}
 
-            <p>
-              ⚠ Add more examples
-            </p>
-          </div>
+  {speechRate < 90 && (
+    <p>
+      ⚠ Speak a little faster
+    </p>
+  )}
+
+  {speechRate > 180 && (
+    <p>
+      ⚠ Slow down your speech
+    </p>
+  )}
+
+  {eyeContact < 70 && (
+    <p>
+      ⚠ Maintain better eye contact
+    </p>
+  )}
+
+  {fillerCount <= 5 &&
+   speechRate >= 90 &&
+   speechRate <= 180 &&
+   eyeContact >= 70 && (
+    <p>
+      ✅ No major improvements needed
+    </p>
+  )}
+
+</div>
 
         </div>
 

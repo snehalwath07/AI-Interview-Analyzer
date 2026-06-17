@@ -5,11 +5,13 @@ import { calculateWPM } from "../utils/speechRate";
 import { useEffect } from "react";
 
 const TranscriptPanel = () => {
-  const {
-    interviewStarted,
-    setSpeechRate,
-    setFillerCount,
-  } = useInterview();
+const {
+  interviewStarted,
+  autoListen,
+  setSpeechRate,
+  setFillerCount,
+  setTranscript,
+} = useInterview();
 
   const {
     transcript,
@@ -19,7 +21,9 @@ const TranscriptPanel = () => {
     resetTranscript,
   } = useSpeechToText();
 
-  const fillerCount = countFillers(transcript);
+  const fillerCount = countFillers(
+    transcript
+  );
 
   const wpm = calculateWPM(
     transcript,
@@ -35,6 +39,25 @@ const TranscriptPanel = () => {
     setFillerCount,
     setSpeechRate,
   ]);
+useEffect(() => {
+
+  setTranscript(transcript);
+
+}, [
+  transcript,
+  setTranscript,
+]);
+  useEffect(() => {
+
+    if (autoListen) {
+      startListening();
+    } else {
+      stopListening();
+    }
+
+  }, [autoListen]);
+
+  
 
   return (
     <div className="card">
@@ -45,7 +68,8 @@ const TranscriptPanel = () => {
 
         {!interviewStarted
           ? "Click Start Interview first..."
-          : transcript || "Start speaking..."}
+          : transcript ||
+            "Start speaking..."}
 
       </div>
 
@@ -82,12 +106,18 @@ const TranscriptPanel = () => {
 
       <p>
         Filler Words Detected:
-        <strong> {fillerCount}</strong>
+        <strong>
+          {" "}
+          {fillerCount}
+        </strong>
       </p>
 
       <p>
         Speech Rate:
-        <strong> {wpm} WPM</strong>
+        <strong>
+          {" "}
+          {wpm} WPM
+        </strong>
       </p>
 
     </div>

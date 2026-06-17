@@ -1,6 +1,8 @@
-import { ChevronDown } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
+  const navigate = useNavigate();
+
   return (
     <nav className="navbar">
 
@@ -17,30 +19,19 @@ const Navbar = () => {
 
       </div>
 
-      <div className="nav-links">
-
-        <a href="#">Features</a>
-
-        <a href="#">How It Works</a>
-
-        <a href="#">Pricing</a>
-
-        <a href="#" className="resource-link">
-          Resources
-          <ChevronDown size={16} />
-        </a>
-
-        <a href="#">About Us</a>
-
-      </div>
-
       <div className="nav-buttons">
 
-        <button className="login-btn">
+        <button
+          className="login-btn"
+          onClick={() => navigate("/login")}
+        >
           Log In
         </button>
 
-        <button className="start-btn">
+        <button
+          className="start-btn"
+          onClick={() => navigate("/login")}
+        >
           Get Started Free
         </button>
 

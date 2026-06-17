@@ -1,13 +1,19 @@
-export const calculateConfidenceScore = ({
-  eyeContact = 0,
-  speechRate = 0,
-  fillerScore = 0,
-  answerScore = 0,
-}) => {
-  return Math.round(
-    eyeContact * 0.35 +
-    speechRate * 0.20 +
-    fillerScore * 0.20 +
-    answerScore * 0.25
+export const calculateConfidence = (
+  eyeContact,
+  fillerCount
+) => {
+
+  let confidence = 100;
+
+  confidence -= fillerCount * 2;
+
+  confidence -=
+    (100 - eyeContact) * 0.5;
+
+  confidence = Math.max(
+    0,
+    Math.min(100, confidence)
   );
+
+  return Math.round(confidence);
 };

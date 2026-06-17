@@ -12,7 +12,6 @@ const Sidebar = () => {
     <div className="sidebar">
 
       <div className="sidebar-header">
-
         <div className="logo-box">
           🎥
         </div>
@@ -21,7 +20,6 @@ const Sidebar = () => {
           <h2>AI Interview</h2>
           <p>Analyzer</p>
         </div>
-
       </div>
 
       <div className="sidebar-menu">
@@ -51,30 +49,6 @@ const Sidebar = () => {
         </NavLink>
 
         <NavLink
-          to="/analytics"
-          className={({ isActive }) =>
-            isActive
-              ? "menu-item active"
-              : "menu-item"
-          }
-        >
-          <span>📊</span>
-          <span>Analytics</span>
-        </NavLink>
-
-        <NavLink
-          to="/reports"
-          className={({ isActive }) =>
-            isActive
-              ? "menu-item active"
-              : "menu-item"
-          }
-        >
-          <span>📄</span>
-          <span>Reports</span>
-        </NavLink>
-
-        <NavLink
           to="/resume"
           className={({ isActive }) =>
             isActive
@@ -98,30 +72,6 @@ const Sidebar = () => {
           <span>History</span>
         </NavLink>
 
-        <NavLink
-          to="/practice"
-          className={({ isActive }) =>
-            isActive
-              ? "menu-item active"
-              : "menu-item"
-          }
-        >
-          <span>🎮</span>
-          <span>Practice Zone</span>
-        </NavLink>
-
-        <NavLink
-          to="/settings"
-          className={({ isActive }) =>
-            isActive
-              ? "menu-item active"
-              : "menu-item"
-          }
-        >
-          <span>⚙️</span>
-          <span>Settings</span>
-        </NavLink>
-
       </div>
 
       <div className="progress-card">
@@ -133,7 +83,9 @@ const Sidebar = () => {
             {currentQuestion + 1} / {questions.length} Questions
           </span>
 
-          <span>{progressPercentage}%</span>
+          <span>
+            {progressPercentage}%
+          </span>
         </div>
 
         <div className="progress-bar">
@@ -145,53 +97,57 @@ const Sidebar = () => {
           ></div>
         </div>
 
-        <ul className="question-list">
+      </div>
 
-          <li>✅ Introduction</li>
+      <div className="tips-card">
 
-          <li>✅ Tell me about yourself</li>
+        <div className="tips-header">
+          🤖 AI Live Tips
+        </div>
 
-          <li>✅ Why do you want this role?</li>
+        <div className="tips-content">
 
-          <li>✅ Describe a challenge</li>
+          <div className="robot-icon">
+            🤖
+          </div>
 
-          <li className="active-question">
-            🔵 Current Question
-          </li>
+          <div>
 
-        </ul>
+            <p>
+              Maintain eye contact and
+              speak confidently.
+            </p>
+
+            <small>
+              Keep answers concise and
+              avoid filler words.
+            </small>
+
+          </div>
+
+        </div>
 
       </div>
 
-    <div className="tips-card">
-
-  <div className="tips-header">
-    🤖 AI Live Tips
-  </div>
-
-  <div className="tips-content">
-
-    <div className="robot-icon">
-      🤖
-    </div>
-
-    <div>
-
-      <p>
-        Maintain eye contact and
-        speak confidently.
-      </p>
-
-      <small>
-        Keep answers concise and
-        avoid filler words.
-      </small>
-
-    </div>
-
-  </div>
-
-</div>
+      <button
+        onClick={() => {
+          localStorage.clear();
+          window.location.href = "/";
+        }}
+        style={{
+          width: "100%",
+          marginTop: "20px",
+          padding: "12px",
+          border: "none",
+          borderRadius: "10px",
+          background: "#ef4444",
+          color: "white",
+          fontWeight: "600",
+          cursor: "pointer",
+        }}
+      >
+        🚪 Logout
+      </button>
 
     </div>
   );

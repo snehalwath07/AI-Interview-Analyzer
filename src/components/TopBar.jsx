@@ -9,10 +9,16 @@ const TopBar = () => {
     interviewStarted,
     setInterviewStarted,
 
+    autoListen,
+    setAutoListen,
+
     eyeContact,
     speechRate,
     fillerCount,
-    answerScore,
+
+    confidenceScore,
+    emotion,
+    transcript,
   } = useInterview();
 
   useEffect(() => {
@@ -45,29 +51,48 @@ const TopBar = () => {
 
   const startInterview = () => {
     setSeconds(0);
+
     setInterviewStarted(true);
+
+    setAutoListen(true);
   };
 
   const endInterview = () => {
 
+    const fillerScore = Math.max(
+      0,
+      100 - fillerCount * 5
+    );
+
     const overallScore = Math.round(
-      eyeContact * 0.30 +
-      speechRate * 0.20 +
-      Math.max(
-        0,
-        100 - fillerCount * 5
-      ) * 0.20 +
-      answerScore * 0.30
+      eyeContact * 0.45 +
+      speechRate * 0.25 +
+      fillerScore * 0.30
     );
 
     saveInterview({
-      score: overallScore,
       date: new Date().toLocaleString(),
+
+      score: overallScore,
+
+      eyeContact,
+
+      confidenceScore,
+
+      speechRate,
+
+      fillerCount,
+
+      emotion,
+
+      transcript,
     });
 
     alert("Interview Saved!");
 
     setInterviewStarted(false);
+
+    setAutoListen(false);
   };
 
   return (
@@ -97,23 +122,23 @@ const TopBar = () => {
 
         {!interviewStarted ? (
 
-          <button
-            className="pause-btn"
-            onClick={startInterview}
-          >
-            ▶ Start Interview
-          </button>
+  <button
+    className="pause-btn"
+    onClick={startInterview}
+  >
+    🔄 Start New Interview
+  </button>
 
-        ) : (
+) : (
 
-          <button
-            className="end-btn"
-            onClick={endInterview}
-          >
-            ■ End Interview
-          </button>
+  <button
+    className="end-btn"
+    onClick={endInterview}
+  >
+    ■ End Interview
+  </button>
 
-        )}
+)}
 
       </div>
 

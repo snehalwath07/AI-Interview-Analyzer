@@ -2,6 +2,7 @@ import {
   createContext,
   useContext,
   useState,
+  useEffect,
 } from "react";
 
 const InterviewContext = createContext();
@@ -14,7 +15,6 @@ export const InterviewProvider = ({
     useState("");
 
   const questions = [
-
     "Tell me about yourself.",
     "Why should we hire you?",
     "What are your strengths and weaknesses?",
@@ -53,7 +53,7 @@ export const InterviewProvider = ({
 
   const [confidenceScore,
     setConfidenceScore] =
-    useState(82);
+    useState(0);
 
   const [speechRate,
     setSpeechRate] =
@@ -65,11 +65,72 @@ export const InterviewProvider = ({
 
   const [answerScore,
     setAnswerScore] =
-    useState(85);
+    useState(0);
 
-    const [interviewStarted,
-  setInterviewStarted] =
+  const [interviewStarted,
+    setInterviewStarted] =
+    useState(false);
+
+    const [autoListen,
+  setAutoListen] =
   useState(false);
+
+useEffect(() => {
+
+  let score = 100;
+
+  // Eye Contact
+  score -= (100 - eyeContact) * 0.4;
+
+  // Filler Words
+  score -= fillerCount * 2;
+
+  // Speech Rate
+  if (speechRate < 90) {
+    score -= 10;
+  }
+
+  if (speechRate > 180) {
+    score -= 10;
+  }
+
+  // Emotion Impact
+  if (emotion === "Happy") {
+    score += 5;
+  }
+
+  if (emotion === "Sad") {
+    score -= 10;
+  }
+
+  score = Math.max(
+    0,
+    Math.min(100, score)
+  );
+
+  setConfidenceScore(
+    Math.round(score)
+  );
+
+  console.log(
+    "Confidence:",
+    Math.round(score),
+    "Eye:",
+    eyeContact,
+    "Fillers:",
+    fillerCount,
+    "WPM:",
+    speechRate,
+    "Emotion:",
+    emotion
+  );
+
+}, [
+  eyeContact,
+  fillerCount,
+  speechRate,
+  emotion,
+]);
 
   return (
     <InterviewContext.Provider
@@ -102,6 +163,10 @@ export const InterviewProvider = ({
 
         interviewStarted,
         setInterviewStarted,
+
+        autoListen,
+setAutoListen,
+
       }}
     >
       {children}
