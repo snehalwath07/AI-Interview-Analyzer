@@ -6,7 +6,7 @@ https://ai-interview-analyzer-tzi9.vercel.app/dashboard
 AI Interview Analyzer
 ```
 Author(s): Snehal Wath
-Affiliation:Suryodaya college / RTMNU
+Affiliation: RTMNU
 Date: 14/06/2026
 ```
 ## Abstract
