@@ -1,0 +1,88 @@
+AI-Interview-Analyzer/
+│
+├── backend/
+│   ├── app.py
+│   ├── requirements.txt
+│   ├── models/
+│   ├── utils/
+│   ├── routes/
+│   ├── services/
+│   └── uploads/
+│
+├── frontend/
+│
+├── public/
+│   ├── models/
+│   │   ├── tiny_face_detector_model-shard1
+│   │   ├── tiny_face_detector_model-weights_manifest.json
+│   │   ├── face_expression_model-shard1
+│   │   ├── face_expression_model-weights_manifest.json
+│   │   ├── face_landmark_68_model-shard1
+│   │   └── face_landmark_68_model-weights_manifest.json
+│   │
+│   └── favicon.ico
+│
+├── src/
+│
+│   ├── assets/
+│   │
+│   ├── components/
+│   │   ├── AIFeedbackPanel.jsx
+│   │   ├── AnswerEvaluation.jsx
+│   │   ├── DownloadReport.jsx
+│   │   ├── EyeTracker.jsx
+│   │   ├── FaceTracker.jsx
+│   │   ├── Features.jsx
+│   │   ├── Hero.jsx
+│   │   ├── InterviewProgress.jsx
+│   │   ├── MetricsGrid.jsx
+│   │   ├── Navbar.jsx
+│   │   ├── PerformancePanel.jsx
+│   │   ├── QuestionGenerator.jsx
+│   │   ├── Sidebar.jsx
+│   │   ├── TopBar.jsx
+│   │   ├── TranscriptPanel.jsx
+│   │   ├── TrustedCompanies.jsx
+│   │   └── WebcamPanel.jsx
+│   │
+│   ├── context/
+│   │   └── InterviewContext.jsx
+│   │
+│   ├── hooks/
+│   │   └── useSpeechRecognition.js
+│   │
+│   ├── pages/
+│   │   ├── Analytics.jsx
+│   │   ├── Dashboard.jsx
+│   │   ├── History.jsx
+│   │   ├── Landing.jsx
+│   │   ├── Login.jsx
+│   │   ├── PracticeZone.jsx
+│   │   ├── QuestionGenerator.jsx
+│   │   ├── Reports.jsx
+│   │   ├── Resume.jsx
+│   │   └── Settings.jsx
+│   │
+│   ├── styles/
+│   │   └── global.css
+│   │
+│   ├── utils/
+│   │   ├── confidenceScore.js
+│   │   ├── fillerwords.js
+│   │   └── storage.js
+│   │
+│   ├── App.css
+│   ├── App.jsx
+│   ├── main.jsx
+│   └── index.css
+│
+├── node_modules/
+│
+├── .gitignore
+├── package.json
+├── package-lock.json
+├── vite.config.js
+├── vercel.json
+├── index.html
+├── README.md
+└── LICENSE
