@@ -1,0 +1,199 @@
+Step 1: Open the Website
+Open the AI Interview Analyzer using the following link:
+**https://your-vercel-link.vercel.app/
+
+You will be redirected to the landing page of the application.
+
+---
+
+## Step 2: Explore the Landing Page
+
+The landing page contains:
+
+* Navigation Bar
+* Hero Section
+* Get Started Free Button
+* Start Free Interview Button
+* Features Section
+* Trusted Companies Section
+
+Read the information to understand the purpose of the platform.
+
+---
+
+## Step 3: Login
+
+Click **"Get Started Free"** or **"Start Free Interview"**.
+
+You will be redirected to the Login page.
+
+Enter your email and password, then click **"Login"**.
+
+After successful login, you will be redirected to the Dashboard.
+
+---
+
+## Step 4: Explore the Dashboard
+
+The dashboard contains:
+
+* AI Interview Performance Overview
+* Performance Metrics
+* AI Feedback Panel
+* Interview Progress
+* Sidebar Navigation
+* Quick Access to All Features
+
+Users can navigate to different sections using the sidebar.
+
+---
+
+## Step 5: Start AI Interview
+
+Click **"AI Questions"** from the sidebar.
+
+The system will:
+
+* Generate interview questions
+* Display one question at a time
+* Allow users to answer verbally
+* Analyze the response
+
+During the interview the application records:
+
+* Speech
+* Confidence
+* Eye Contact
+* Facial Expressions
+* Head Movement
+* Speaking Speed
+
+---
+
+## Step 6: View AI Performance Analysis
+
+After answering interview questions, the dashboard displays:
+
+### Confidence Score
+
+Measures the confidence level while speaking.
+
+### Eye Contact Score
+
+Analyzes whether the user maintains proper eye contact.
+
+### Speech Analysis
+
+Evaluates speaking speed and communication quality.
+
+### AI Feedback
+
+Provides personalized suggestions for improving interview performance.
+
+### Interview Progress
+
+Displays the number of completed interview questions.
+
+---
+
+## Step 7: Resume Match Analysis
+
+Click **"Resume Match"** from the sidebar.
+
+Users can upload resumes in the following formats:
+
+* PDF
+* DOCX
+
+Paste the Job Description into the provided text area.
+
+Click **"Analyze Match"**.
+
+The system will:
+
+* Read the resume
+* Extract text
+* Compare resume skills with the job description
+* Calculate Resume Match Score
+* Detect Missing Skills
+* Recommend Matching Skills
+
+---
+
+## Step 8: Review Resume Results
+
+After analysis, the system displays:
+
+### Resume Match Score
+
+Shows how well the uploaded resume matches the job description.
+
+### Missing Skills
+
+Displays important skills found in the job description but missing from the resume.
+
+### Recommended Skills
+
+Shows matching technical skills detected in the resume.
+
+### Resume Improvement Suggestion
+
+Provides guidance to improve the resume and increase the match percentage.
+
+---
+
+## Step 9: Interview History
+
+Click **"History"** from the sidebar.
+
+The History page displays:
+
+* Previous Interview Sessions
+* Interview Score
+* Date of Attempt
+
+Users can review previous interview performance.
+
+Users can also click **"Delete History"** to remove all stored interview records.
+
+---
+
+## Step 10: Logout
+
+Click the **"Logout"** button from the sidebar.
+
+The application clears the current session and redirects the user back to the Landing Page.
+
+---
+
+#How It Works
+
+### Step 1
+
+User logs into the application.
+
+### Step 2
+
+AI generates interview questions.
+
+### Step 3
+
+The system records speech and facial activity.
+
+### Step 4
+
+AI analyzes interview performance.
+
+### Step 5
+
+Performance metrics and AI feedback are displayed.
+
+### Step 6
+
+Users can upload resumes for Resume Match Analysis.
+
+### Step 7
+
+The system compares resume skills with the Job Description and generates recommendations.
+
+
